@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
 function Product({ product }) {
-  const { image, price, category, title } = product;
+  const { id, image, price, category, title } = product;
+
   return (
-    <Link to="/item">
+    <Link to={`/item/${id}`}>
       <li className="border-2 flex flex-col border-slate-200 mb-3 px-2 py-2">
         <div className="w-full h-1/2">
           <img src={image} alt="item img w-full" />

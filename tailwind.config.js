@@ -9,6 +9,9 @@ export default {
       gridTemplateColumns: {
         "auto-grid": "repeat(auto-fit, minmax(min(10rem, 100%), 1fr))",
       },
+      colors: {
+        primary: "#15151F",
+      },
     },
   },
   plugins: [],

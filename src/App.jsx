@@ -4,8 +4,7 @@ import Error from "./ui/Error";
 import Products, {
   loader as productsLoader,
 } from "./features/products/Products";
-import Item from "./features/products/Item";
-
+import Item, { loader as itemLoader } from "./features/products/Item";
 
 const router = createBrowserRouter([
   {
@@ -18,9 +17,10 @@ const router = createBrowserRouter([
         loader: productsLoader,
       },
       {
-        path:"/item",
-        element: <Item />
-      }
+        path: "/item/:id",
+        element: <Item />,
+        loader: itemLoader,
+      },
     ],
   },
 ]);
