@@ -8,3 +8,11 @@ export async function getProducts() {
 
   return data;
 }
+
+export async function getProduct(id) {
+  const res = await fetch(`${API_URL}/${id}`);
+  if (!res.ok) throw new Error("Failed fetching product");
+  const data = await res.json();
+
+  return data;
+}
