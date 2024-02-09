@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         roboto: "Roboto Mono",
       },
+      gridTemplateColumns: {
+        "auto-grid": "repeat(auto-fit, minmax(min(10rem, 100%), 1fr))",
+      },
     },
   },
   plugins: [],
