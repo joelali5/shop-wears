@@ -1,9 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
-import Products, {
-  loader as productsLoader,
-} from "./features/products/Products";
+// import { loader as productsLoader } from "./features/products/Products";
+import Home, { loader as homeLoader } from "./ui/Home";
 import Item, { loader as itemLoader } from "./features/products/Item";
 
 const router = createBrowserRouter([
@@ -13,8 +12,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Products />,
-        loader: productsLoader,
+        element: <Home />,
+        loader: homeLoader,
       },
       {
         path: "/item/:id",
