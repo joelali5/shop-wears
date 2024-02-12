@@ -1,9 +1,20 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
-// import { loader as productsLoader } from "./features/products/Products";
-import Home, { loader as homeLoader } from "./ui/Home";
+import Products, {
+  loader as productsLoader,
+} from "./features/products/Products";
+import Home from "./ui/Home";
 import Item, { loader as itemLoader } from "./features/products/Item";
+import Mens, { loader as mensLoader } from "./features/products/Mens";
+import Women from "./features/products/Women";
+import Electronics, {
+  loader as electronicsLoader,
+} from "./features/products/Electronics";
+import Jewelery, {
+  loader as jeweleryLoader,
+} from "./features/products/Jewelery";
+import Kids, { loader as kidsLoader } from "./features/products/Kids";
 
 const router = createBrowserRouter([
   {
@@ -13,12 +24,40 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: homeLoader,
+      },
+      {
+        path: "/products",
+        element: <Products />,
+        loader: productsLoader,
       },
       {
         path: "/item/:id",
         element: <Item />,
         loader: itemLoader,
+      },
+      {
+        path: "/men",
+        element: <Mens />,
+        loader: mensLoader,
+      },
+      {
+        path: "/women",
+        element: <Women />,
+      },
+      {
+        path: "/jewelery",
+        element: <Jewelery />,
+        loader: jeweleryLoader,
+      },
+      {
+        path: "/electronics",
+        element: <Electronics />,
+        loader: electronicsLoader,
+      },
+      {
+        path: "/kids",
+        element: <Kids />,
+        loader: kidsLoader,
       },
     ],
   },
