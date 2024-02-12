@@ -28,8 +28,6 @@ function Item() {
 export async function loader({ params }) {
   const item = await getProduct(params.id);
 
-  console.log(item);
-
   return item;
 }
 export default Item;
