@@ -6,9 +6,9 @@ function Header() {
       <div className="sm:w-3/5 sm:mx-auto flex justify-between">
         <Link
           to="/"
-          className="text-xl uppercase text-primary font-bold font-roboto tracking-widest"
+          className="text-lg uppercase text-primary font-bold font-greatVibe tracking-widest"
         >
-          shop-stuff
+          shopstuff
         </Link>
         <nav>navigation</nav>
       </div>

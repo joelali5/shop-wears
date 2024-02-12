@@ -6,12 +6,16 @@ function Home() {
       <li className="">
         <img src="all.jpg" alt="all wears" className="h-[300px] object-cover" />
         <p>Men</p>
-        <Link to="/products">Shop Now</Link>
+        <Link to="/products" className="text-blue-400">
+          Shop Now
+        </Link>
       </li>
       <li className="">
         <img src="men.jpg" alt="mens wear" className="h-[300px]" />
         <p>Men</p>
-        <Link to="/men">Shop Now</Link>
+        <Link to="/men" className="text-blue-400">
+          Shop Now
+        </Link>
       </li>
       <li>
         <img
@@ -20,7 +24,9 @@ function Home() {
           className="h-[300px] object-cover"
         />
         <p>Women</p>
-        <Link to="/women">Shop Now</Link>
+        <Link to="/women" className="text-blue-400">
+          Shop Now
+        </Link>
       </li>
       <li>
         <img
@@ -29,7 +35,9 @@ function Home() {
           className="h-[300px] object-cover"
         />
         <p>Jewellery</p>
-        <Link to="/jewelery">Shop Now</Link>
+        <Link to="/jewelery" className="text-blue-400">
+          Shop Now
+        </Link>
       </li>
       <li>
         <img
@@ -38,7 +46,9 @@ function Home() {
           className="h-[300px] object-cover"
         />
         <p>Kids</p>
-        <Link to="/kids">Shop Now</Link>
+        <Link to="/kids" className="text-blue-400">
+          Shop Now
+        </Link>
       </li>
       <li>
         <img
@@ -47,7 +57,9 @@ function Home() {
           className="h-[300px] object-cover"
         />
         <p>Electronics</p>
-        <Link to="/electronics">Shop Now</Link>
+        <Link to="/electronics" className="text-blue-400">
+          Shop Now
+        </Link>
       </li>
     </ul>
   );
