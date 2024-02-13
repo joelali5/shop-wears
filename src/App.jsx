@@ -15,6 +15,7 @@ import Jewelery, {
   loader as jeweleryLoader,
 } from "./features/products/Jewelery";
 import Kids, { loader as kidsLoader } from "./features/products/Kids";
+import Cart from "./features/cart/Cart";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         path: "/kids",
         element: <Kids />,
         loader: kidsLoader,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
