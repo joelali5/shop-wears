@@ -1,3 +1,4 @@
+import BackBtn from "../../ui/BackBtn";
 import CartItem from "./CartItem";
 
 function Cart() {
@@ -65,11 +66,14 @@ function Cart() {
   ];
 
   return (
-    <ul className="list-none px-4 py-3 sm:w-3/5 sm:mx-auto sm:px-0">
-      {fakeCart.map((item) => (
-        <CartItem item={item} key={item.key} />
-      ))}
-    </ul>
+    <>
+      <BackBtn route={-1} />
+      <ul className="list-none px-4 py-3 sm:w-3/5 sm:mx-auto sm:px-0">
+        {fakeCart.map((item) => (
+          <CartItem item={item} key={item.key} />
+        ))}
+      </ul>
+    </>
   );
 }
 
