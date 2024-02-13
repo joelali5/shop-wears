@@ -5,7 +5,7 @@ function Home() {
     <ul className="px-5 py-8 sm:w-3/5 sm:mx-auto sm:px-0 sm:pt-10 grid grid-cols-auto-grid gap-5">
       <li className="">
         <img src="all.jpg" alt="all wears" className="h-[300px] object-cover" />
-        <p>Men</p>
+        <p>All products</p>
         <Link to="/products" className="text-blue-400">
           Shop Now
         </Link>
