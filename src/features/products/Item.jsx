@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { getProduct } from "../../services/apiProducts";
 import BackBtn from "../../ui/BackBtn";
 
@@ -21,9 +21,12 @@ function Item() {
           </p>
           <div className="flex justify-between items-center mt-4 sm:w-5/6">
             <p className="font-bold text-lg sm:text-2xl">£{price}</p>
-            <button className="border-1 px-3 py-3 font-bold outline outline-1 outline-primary hover:bg-primary transition hover:ease-in-out duration-300 hover:text-white uppercase text-xs rounded-sm">
+            <Link
+              to="/cart"
+              className="border-1 px-3 py-3 font-bold outline outline-1 outline-primary hover:bg-primary transition hover:ease-in-out duration-300 hover:text-white uppercase text-xs rounded-sm"
+            >
               Add to cart
-            </button>
+            </Link>
           </div>
         </div>
       </div>
