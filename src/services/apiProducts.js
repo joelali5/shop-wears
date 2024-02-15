@@ -16,3 +16,19 @@ export async function getProduct(id) {
 
   return data;
 }
+
+export async function getAllCategories() {
+  const res = await fetch(`${API_URL}/categories`);
+  if (!res.ok) throw new Error("Error fetching Categories");
+  const data = await res.json();
+
+  return data;
+}
+
+export async function getCategory(category) {
+  const res = await fetch(`${API_URL}/category/${category}`);
+  if (!res.ok) throw new Error("Failed fetching this category");
+
+  const data = await res.json();
+  return data;
+}

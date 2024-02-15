@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         roboto: "Roboto Mono",
+        greatVibe: "Great Vibes, cursive;",
       },
       gridTemplateColumns: {
         "auto-grid": "repeat(auto-fit, minmax(min(10rem, 100%), 1fr))",
