@@ -1,3 +1,8 @@
+
+import Navigation from "./Navigation";
+
+function Header() {
+  return <Navigation />;
 import { Link } from "react-router-dom";
 
 function Header() {
