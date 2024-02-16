@@ -1,0 +1,40 @@
+import { NavLink } from "react-router-dom";
+
+function LargeScreens() {
+  return (
+    <div className="sm:flex gap-4 text-[16px] hidden">
+      <NavLink
+        to="/men"
+        className="hover:text-blue-400 text-stone-400 aria-[current=page]:text-blue-400 sm:aria-[current=page]:border-b-2 pb-2 sm:aria-[current=page]:border-blue-400"
+      >
+        Men
+      </NavLink>
+      <NavLink
+        to="/women"
+        className="hover:text-blue-400 text-stone-400 aria-[current=page]:text-blue-400 sm:aria-[current=page]:border-b-2 pb-2 sm:aria-[current=page]:border-blue-400"
+      >
+        Women
+      </NavLink>
+      <NavLink
+        to="/kids"
+        className="hover:text-blue-400 text-stone-400 aria-[current=page]:text-blue-400 sm:aria-[current=page]:border-b-2 pb-2 sm:aria-[current=page]:border-blue-400"
+      >
+        Kids
+      </NavLink>
+      <NavLink
+        to="/jewelery"
+        className="hover:text-blue-400 text-stone-400 aria-[current=page]:text-blue-400 sm:aria-[current=page]:border-b-2 pb-2 sm:aria-[current=page]:border-blue-400"
+      >
+        Jewelery
+      </NavLink>
+      <NavLink
+        to="/electronics"
+        className="hover:text-blue-400 text-stone-400 aria-[current=page]:text-blue-400 sm:aria-[current=page]:border-b-2 pb-2 sm:aria-[current=page]:border-blue-400"
+      >
+        Electronics
+      </NavLink>
+    </div>
+  );
+}
+
+export default LargeScreens;
