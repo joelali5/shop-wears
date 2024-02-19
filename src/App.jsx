@@ -15,6 +15,7 @@ import Jewelery, {
   loader as jeweleryLoader,
 } from "./features/products/Jewelery";
 import Cart from "./features/cart/Cart";
+import SignUp from "./features/authentication/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
       },
     ],
   },
