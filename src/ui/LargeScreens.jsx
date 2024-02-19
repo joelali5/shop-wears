@@ -15,12 +15,7 @@ function LargeScreens() {
       >
         Women
       </NavLink>
-      <NavLink
-        to="/kids"
-        className="hover:text-blue-400 text-stone-400 aria-[current=page]:text-blue-400 sm:aria-[current=page]:border-b-2 pb-2 sm:aria-[current=page]:border-blue-400"
-      >
-        Kids
-      </NavLink>
+
       <NavLink
         to="/jewelery"
         className="hover:text-blue-400 text-stone-400 aria-[current=page]:text-blue-400 sm:aria-[current=page]:border-b-2 pb-2 sm:aria-[current=page]:border-blue-400"

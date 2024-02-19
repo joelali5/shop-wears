@@ -47,17 +47,7 @@ function Home() {
           Shop Now
         </Link>
       </li>
-      <li className="mb-5 sm:mb-4">
-        <img
-          src="kids.jpg"
-          alt="kids wear"
-          className="sm:h-[300px] sm:w-[350px] rounded-lg object-cover"
-        />
-        <p>Kids</p>
-        <Link to="/kids" className="text-stone-400">
-          Shop Now
-        </Link>
-      </li>
+
       <li className="mb-5 sm:mb-4">
         <img
           src="electronics.jpg"

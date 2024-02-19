@@ -6,7 +6,6 @@ import { useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 import MobileViewNav from "./MobileViewNav";
 import LargeScreens from "./LargeScreens";
-// import { HiOutlineShoppingBag } from "react-icons/hi2";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +15,17 @@ function Navigation() {
   }
   return (
     <div className="flex flex-col">
-      <div className="bg-header text-white flex justify-between items-center px-5 sm:px-10 py-4">
-        <Link to="/">Logo</Link>
+      <div className="bg-header text-white flex justify-between items-center px-5 sm:px-10 py-4 sm:py-0">
+        <Link to="/">
+          <img className="w-[100px]" src="logo.png" alt="website logo" />
+        </Link>
         <LargeScreens />
         <div className="flex space-x-3 items-center">
           <NavLink>
             <FaRegUser />
           </NavLink>
 
-          <Link>
+          <Link to="/cart">
             <BsCart4 className="text-2xl cursor-pointer text-stone-300" />
           </Link>
           <h3>CAD</h3>
@@ -33,7 +34,6 @@ function Navigation() {
       <div className="flex justify-between bg-primary sm:bg-transparent pt-5">
         <div className="flex flex-col gap-4 px-5 sm:flex-row sm:justify-between sm:px-10 sm:py-4">
           {isOpen && <MobileViewNav />}
-          {/* {!isOpen && <LargeScreens />} */}
         </div>
         <div className="pr-5 sm:hidden" onClick={handleMenuToggle}>
           {isOpen ? (
@@ -48,5 +48,3 @@ function Navigation() {
 }
 
 export default Navigation;
-
-//border-b-1 border-b-stone-500 sm:flex-row sm:space-x-8 sm:font-sans
