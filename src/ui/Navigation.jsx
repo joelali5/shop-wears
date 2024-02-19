@@ -4,6 +4,7 @@ import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { FaRegUser } from "react-icons/fa";
+import { IoMdLogIn } from "react-icons/io";
 import MobileViewNav from "./MobileViewNav";
 import LargeScreens from "./LargeScreens";
 
@@ -22,11 +23,15 @@ function Navigation() {
         <LargeScreens />
         <div className="flex space-x-3 items-center">
           <NavLink>
-            <FaRegUser />
+            <IoMdLogIn className="text-2xl cursor-pointer text-stone-300" />
+          </NavLink>
+          <NavLink>
+            <FaRegUser className="text-lg cursor-pointer text-stone-300" />
           </NavLink>
 
-          <Link to="/cart">
+          <Link to="/cart" className="flex">
             <BsCart4 className="text-2xl cursor-pointer text-stone-300" />
+            <sub className="text-red-500 font-700 font-roboto">0</sub>
           </Link>
           <h3>CAD</h3>
         </div>
