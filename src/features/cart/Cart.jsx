@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BackBtn from "../../ui/BackBtn";
 import CartItem from "./CartItem";
 
@@ -73,6 +74,14 @@ function Cart() {
           <CartItem item={item} key={item.key} />
         ))}
       </ul>
+      <div className="sm:w-3/5 mx-3 mb-3 sm:mx-auto flex justify-end">
+        <Link
+          to="/checkout"
+          className="px-3 sm:px-5 py-2 bg-primary rounded-md text-stone-300"
+        >
+          Checkout
+        </Link>
+      </div>
     </>
   );
 }

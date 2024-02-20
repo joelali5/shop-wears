@@ -17,6 +17,7 @@ import Jewelery, {
 import Cart from "./features/cart/Cart";
 import SignUp from "./features/authentication/SignUp";
 import Login from "./features/authentication/Login";
+import Checkout from "./features/checkout/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },
