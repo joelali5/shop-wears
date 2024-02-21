@@ -1,5 +1,4 @@
 import BackBtn from "../../ui/BackBtn";
-import CartItem from "../cart/CartItem";
 
 const fakeCart = [
   {
@@ -39,26 +38,25 @@ function Checkout() {
     <>
       <BackBtn />
       <div className="sm:w-3/5 sm:mx-auto mx-2 my-2 sm:my-0">
-        <form className="flex flex-col mb-4">
-          <input
-            type="text"
-            defaultValue="joel aliyu"
-            className="p-1 border-[1.5px] border-stone-200 w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono mb-3 text-sm sm:text-lg"
-          />
-          <input
-            type="number"
-            defaultValue="0764632342445"
-            className="p-1 border-[1.5px] border-stone-200 w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono mb-3 text-sm sm:text-lg"
-          />
-          <input
-            type="text"
-            defaultValue="27 Okparavero close, off uwasota. Benin city"
-            className="border-[1.5px] p-1 border-stone-200 w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono mb-3 text-sm sm:text-lg"
-          />
-        </form>
-        <ul className="list-none px-2 py-3 sm:w-full sm:mx-auto sm:px-0">
+        <div className="flex flex-col mb-4">
+          <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
+            joel aliyu
+          </p>
+
+          <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
+            27 Okparavero close, off uwasota. Benin city
+          </p>
+          <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
+            0764632342445
+          </p>
+        </div>
+        <ul className="list-none flex">
           {fakeCart.map((item) => (
-            <CartItem item={item} key={item.key} />
+            <li className="mb-5 pb-3 basis-24">
+              <div className="">
+                <img className="w-full" src={item.image} alt="product img" />
+              </div>
+            </li>
           ))}
         </ul>
         <div>Payment method</div>

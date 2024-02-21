@@ -5,36 +5,6 @@ import CartItem from "./CartItem";
 function Cart() {
   const fakeCart = [
     {
-      id: 1,
-      category: "men's clothing",
-      description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      price: 109.95,
-      rating: { rate: 3.9, count: 120 },
-      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    },
-    {
-      id: 2,
-      category: "men's clothing",
-      description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      price: 109.95,
-      rating: { rate: 3.9, count: 120 },
-      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    },
-    {
-      id: 3,
-      category: "men's clothing",
-      description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      price: 109.95,
-      rating: { rate: 3.9, count: 120 },
-      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    },
-    {
       id: 4,
       category: "men's clothing",
       description:
@@ -77,7 +47,7 @@ function Cart() {
       <div className="sm:w-3/5 mx-3 mb-3 sm:mx-auto flex justify-end">
         <Link
           to="/checkout"
-          className="px-3 sm:px-5 py-2 bg-primary rounded-md text-stone-300"
+          className="px-3 sm:px-5 py-2 bg-green-400 rounded-md text-white font-roboto tracking-wide"
         >
           Checkout
         </Link>

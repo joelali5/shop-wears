@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
@@ -10,24 +10,28 @@ import LargeScreens from "./LargeScreens";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function handleMenuToggle() {
     setIsOpen((prevOpen) => !prevOpen);
   }
   return (
     <div className="flex flex-col">
-      <div className="bg-header text-white flex justify-between items-center px-5 sm:px-10 py-4 sm:py-0">
+      <div className="bg-primary text-white flex justify-between items-center px-5 sm:px-10 py-4 sm:py-0">
         <Link to="/">
           <img className="w-[100px]" src="logo.png" alt="website logo" />
         </Link>
         <LargeScreens />
-        <div className="flex space-x-3 items-center">
-          <NavLink>
-            <IoMdLogIn className="text-2xl cursor-pointer text-stone-300" />
-          </NavLink>
-          <NavLink>
-            <FaRegUser className="text-lg cursor-pointer text-stone-300" />
-          </NavLink>
+        <div className="flex items-center space-x-2">
+          {isLoggedIn ? (
+            <Link to="/register">
+              <FaRegUser className="text-lg cursor-pointer text-stone-300" />
+            </Link>
+          ) : (
+            <Link to="/login">
+              <IoMdLogIn className="text-2xl cursor-pointer text-stone-300" />
+            </Link>
+          )}
 
           <Link to="/cart" className="flex">
             <BsCart4 className="text-2xl cursor-pointer text-stone-300" />
