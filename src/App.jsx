@@ -19,6 +19,8 @@ import SignUp from "./features/authentication/SignUp";
 import Login from "./features/authentication/Login";
 import Checkout from "./features/checkout/Checkout";
 
+// import { supabase } from "./helper/supabaseClient";
+
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
