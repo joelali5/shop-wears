@@ -1,29 +1,42 @@
 import { useForm } from "react-hook-form";
+import { supabase } from "../../helper/supabaseClient";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  function onSubmit(data) {
-    console.log(data);
-    const {
-      email,
-      username,
-      password,
-      firstname,
-      lastname,
-      city,
-      street,
-      houseNumber: number,
-      zip: zipcode,
-      tel: phone,
-    } = data;
-
-    console.log(number, phone);
+  async function onSubmit(formData) {
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          data: {
+            username: formData.username,
+            firstname: formData.firstname,
+            lastname: formData.lastname,
+            city: formData.city,
+            street: formData.street,
+            houseNumber: formData.houseNumber,
+            postcode: formData.postcode,
+          },
+        },
+      });
+      reset();
+      toast.success("Account created successfully.");
+      navigate("/checkout");
+    } catch (error) {
+      toast.error("There was error creating your account");
+    }
   }
+
   return (
     <div className="flex flex-col w-[375px] mx-auto">
       <h2 className="self-center font-semibold font-roboto text-xl mb-5">
@@ -130,30 +143,30 @@ function SignUp() {
           {errors.houseNumber?.message}
         </p>
 
-        <label htmlFor="zip" className="mb-2">
-          Zipcode:
+        <label htmlFor="postcode" className="mb-2">
+          Postcode:
         </label>
         <input
-          id="zip"
+          id="postcode"
           type="text"
           className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          {...register("zip", { required: "zip cannot be empty" })}
+          {...register("postcode", { required: "Postcode cannot be empty" })}
         />
         <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.zip?.message}
+          {errors.postcode?.message}
         </p>
 
-        <label htmlFor="tel" className="mb-2">
-          Tel:
+        <label htmlFor="phone" className="mb-2">
+          Phone:
         </label>
         <input
           type="text"
-          id="tel"
+          id="phone"
           className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          {...register("tel", { required: "Phone cannot be empty" })}
+          {...register("phone", { required: "Phone cannot be empty" })}
         />
         <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.tel?.message}
+          {errors.phone?.message}
         </p>
 
         <button className="bg-primary rounded-lg px-1 py-2 mb-2 text-stone-200 font-bold font-mono">

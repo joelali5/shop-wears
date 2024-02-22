@@ -36,7 +36,7 @@ const fakeCart = [
 function Checkout() {
   return (
     <>
-      <BackBtn />
+      <BackBtn route={-1} />
       <div className="sm:w-3/5 sm:mx-auto mx-2 my-2 sm:my-0">
         <div className="flex flex-col mb-4">
           <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
