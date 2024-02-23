@@ -1,16 +1,27 @@
 import { useForm } from "react-hook-form";
+import { supabase } from "../../helper/supabaseClient";
+import toast from "react-hot-toast";
 
-function Login() {
+function Login({ setToken }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  function onSubmit(data) {
+  async function onSubmit(data) {
     const { email, password } = data;
-    console.log(email, password);
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
+      });
+      // setToken(data);
+    } catch (error) {
+      toast.error(error);
+    }
   }
+
   return (
     <div className="flex flex-col w-[375px] mx-auto">
       <h2 className="self-center font-semibold font-roboto text-xl mb-5">

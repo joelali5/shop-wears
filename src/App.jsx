@@ -18,68 +18,71 @@ import Cart from "./features/cart/Cart";
 import SignUp from "./features/authentication/SignUp";
 import Login from "./features/authentication/Login";
 import Checkout from "./features/checkout/Checkout";
-
-// import { supabase } from "./helper/supabaseClient";
-
-const router = createBrowserRouter([
-  {
-    element: <AppLayout />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/products",
-        element: <Products />,
-        loader: productsLoader,
-      },
-      {
-        path: "/item/:id",
-        element: <Item />,
-        loader: itemLoader,
-      },
-      {
-        path: "/men",
-        element: <Mens />,
-        loader: mensLoader,
-      },
-      {
-        path: "/women",
-        element: <Women />,
-      },
-      {
-        path: "/jewelery",
-        element: <Jewelery />,
-        loader: jeweleryLoader,
-      },
-      {
-        path: "/electronics",
-        element: <Electronics />,
-        loader: electronicsLoader,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/signup",
-        element: <SignUp />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/checkout",
-        element: <Checkout />,
-      },
-    ],
-  },
-]);
+import { useState } from "react";
 
 function App() {
+  // const [token, setToken] = useState(false);
+  // if (token) {
+  //   sessionStorage.setItem("token", JSON.stringify(token));
+  // }
+
+  const router = createBrowserRouter([
+    {
+      element: <AppLayout />,
+      errorElement: <Error />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/products",
+          element: <Products />,
+          loader: productsLoader,
+        },
+        {
+          path: "/item/:id",
+          element: <Item />,
+          loader: itemLoader,
+        },
+        {
+          path: "/men",
+          element: <Mens />,
+          loader: mensLoader,
+        },
+        {
+          path: "/women",
+          element: <Women />,
+        },
+        {
+          path: "/jewelery",
+          element: <Jewelery />,
+          loader: jeweleryLoader,
+        },
+        {
+          path: "/electronics",
+          element: <Electronics />,
+          loader: electronicsLoader,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "/signup",
+          element: <SignUp />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/checkout",
+          element: <Checkout />,
+        },
+      ],
+    },
+  ]);
   return <RouterProvider router={router} />;
 }
 
