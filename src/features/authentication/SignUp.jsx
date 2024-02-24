@@ -19,13 +19,9 @@ function SignUp() {
         password: formData.password,
         options: {
           data: {
-            username: formData.username,
-            firstname: formData.firstname,
-            lastname: formData.lastname,
-            city: formData.city,
-            street: formData.street,
-            houseNumber: formData.houseNumber,
-            postcode: formData.postcode,
+            fullname: formData.fullname,
+            address: formData.address,
+            phone: formData.phone,
           },
         },
       });
@@ -55,18 +51,7 @@ function SignUp() {
         <p className="text-xs sm:text-sm text-red-500 mb-3">
           {errors.email?.message}
         </p>
-        <label htmlFor="username" className="mb-2">
-          Username:
-        </label>
-        <input
-          type="text"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          id="username"
-          {...register("username", { required: "username cannot be empty" })}
-        />
-        <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.username?.message}
-        </p>
+
         <label htmlFor="password" className="mb-2">
           Password:
         </label>
@@ -79,81 +64,30 @@ function SignUp() {
         <p className="text-xs sm:text-sm text-red-500 mb-3">
           {errors.password?.message}
         </p>
-        <label htmlFor="firstname" className="mb-2">
-          First name:
+        <label htmlFor="fullname" className="mb-2">
+          Fullname:
         </label>
         <input
           type="text"
-          id="firstname"
+          id="fullname"
           className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          {...register("firstname", { required: "first name cannot be empty" })}
+          {...register("fullname", { required: "Full name cannot be empty" })}
         />
         <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.firstname?.message}
-        </p>
-        <label htmlFor="lastname" className="mb-2">
-          Last name:
-        </label>
-        <input
-          type="text"
-          id="lastname"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          {...register("lastname", { required: "last name cannot be empty" })}
-        />
-        <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.lastname?.message}
+          {errors.fullname?.message}
         </p>
 
-        <label htmlFor="city" className="mb-2">
-          City:
+        <label htmlFor="address" className="mb-2">
+          Address:
         </label>
         <input
           type="text"
-          id="city"
+          id="address"
           className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          {...register("city", { required: "city cannot be empty" })}
+          {...register("address", { required: "address cannot be empty" })}
         />
         <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.city?.message}
-        </p>
-        <label htmlFor="street" className="mb-2">
-          Street:
-        </label>
-        <input
-          type="text"
-          id="street"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          {...register("street", { required: "street cannot be empty" })}
-        />
-        <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.street?.message}
-        </p>
-        <label htmlFor="houseNumber" className="mb-2">
-          House number:
-        </label>
-        <input
-          type="number"
-          id="houseNumber"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          {...register("houseNumber", {
-            required: "house number cannot be empty",
-          })}
-        />
-        <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.houseNumber?.message}
-        </p>
-
-        <label htmlFor="postcode" className="mb-2">
-          Postcode:
-        </label>
-        <input
-          id="postcode"
-          type="text"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
-          {...register("postcode", { required: "Postcode cannot be empty" })}
-        />
-        <p className="text-xs sm:text-sm text-red-500 mb-3">
-          {errors.postcode?.message}
+          {errors.address?.message}
         </p>
 
         <label htmlFor="phone" className="mb-2">
