@@ -52,7 +52,7 @@ function Checkout() {
         </div>
         <ul className="list-none flex">
           {fakeCart.map((item) => (
-            <li className="mb-5 pb-3 basis-24">
+            <li className="mb-5 pb-3 basis-24" key={item.id}>
               <div className="">
                 <img className="w-full" src={item.image} alt="product img" />
               </div>

@@ -13,23 +13,24 @@ function SignUp() {
   } = useForm();
 
   async function onSubmit(formData) {
-    try {
-      const { data, error } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-        options: {
-          data: {
-            fullname: formData.fullname,
-            address: formData.address,
-            phone: formData.phone,
-          },
+    const { data, error } = await supabase.auth.signUp({
+      email: formData.email,
+      password: formData.password,
+      options: {
+        data: {
+          fullname: formData.fullname,
+          address: formData.address,
+          phone: formData.phone,
         },
-      });
-      reset();
-      toast.success("Account created successfully.");
-      navigate("/checkout");
-    } catch (error) {
-      toast.error("There was error creating your account");
+      },
+    });
+    reset();
+    toast.success("Account created successfully.");
+    navigate("/checkout");
+
+    if (error && data) {
+      toast.error("User already exists. Please login.");
+      navigate("/login");
     }
   }
 

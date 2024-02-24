@@ -1,24 +1,28 @@
 import { useForm } from "react-hook-form";
 import { supabase } from "../../helper/supabaseClient";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
-function Login({ setToken }) {
+function Login() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  async function onSubmit(data) {
-    const { email, password } = data;
-    try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-      });
-      // setToken(data);
-    } catch (error) {
-      toast.error(error);
+  async function onSubmit(formData) {
+    const { email, password } = formData;
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+    reset();
+    navigate("/checkout");
+    console.log(data);
+    if (error) {
+      toast.error("Invalid login credentials.");
     }
   }
 
