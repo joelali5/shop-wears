@@ -18,14 +18,8 @@ import Cart from "./features/cart/Cart";
 import SignUp from "./features/authentication/SignUp";
 import Login from "./features/authentication/Login";
 import Checkout from "./features/checkout/Checkout";
-import { useState } from "react";
 
 function App() {
-  // const [token, setToken] = useState(false);
-  // if (token) {
-  //   sessionStorage.setItem("token", JSON.stringify(token));
-  // }
-
   const router = createBrowserRouter([
     {
       element: <AppLayout />,

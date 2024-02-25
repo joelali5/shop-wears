@@ -26,9 +26,10 @@ function SignUp() {
     });
     reset();
     toast.success("Account created successfully.");
-    navigate("/checkout");
+    console.log(data);
+    navigate("/login");
 
-    if (error && data) {
+    if (error) {
       toast.error("User already exists. Please login.");
       navigate("/login");
     }
