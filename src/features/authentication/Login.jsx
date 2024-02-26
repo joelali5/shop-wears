@@ -1,10 +1,14 @@
 import { useForm } from "react-hook-form";
-import { supabase } from "../../helper/supabaseClient";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { login } from "../../services/apiAuth";
+import SpinnerMini from "../../ui/SpinnerMini";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 function Login() {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -14,15 +18,15 @@ function Login() {
 
   async function onSubmit(formData) {
     const { email, password } = formData;
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-    });
-    reset();
-    navigate("/checkout");
-    console.log(data);
-    if (error) {
-      toast.error("Invalid login credentials.");
+
+    try {
+      setIsLoading(true);
+      await login(email, password);
+      setIsLoading(false);
+      reset();
+      navigate("/checkout");
+    } catch (error) {
+      toast.error("Provided email or password is incorrect!");
     }
   }
 
@@ -60,8 +64,11 @@ function Login() {
           {errors.password?.message}
         </p>
 
-        <button className="bg-primary rounded-lg px-1 py-2 mb-2 text-stone-200 font-bold font-mono">
-          sign in
+        <button
+          className="bg-primary rounded-lg px-1 py-2 mb-2 text-stone-200 font-bold font-mono"
+          disabled={isLoading}
+        >
+          {isLoading ? <SpinnerMini /> : "Login"}
         </button>
       </form>
     </div>

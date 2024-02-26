@@ -18,14 +18,9 @@ import Cart from "./features/cart/Cart";
 import SignUp from "./features/authentication/SignUp";
 import Login from "./features/authentication/Login";
 import Checkout from "./features/checkout/Checkout";
-import { useState } from "react";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 function App() {
-  // const [token, setToken] = useState(false);
-  // if (token) {
-  //   sessionStorage.setItem("token", JSON.stringify(token));
-  // }
-
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
@@ -78,7 +73,11 @@ function App() {
         },
         {
           path: "/checkout",
-          element: <Checkout />,
+          element: (
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          ),
         },
       ],
     },
