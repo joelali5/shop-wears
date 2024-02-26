@@ -3,14 +3,12 @@ import { BsCart4 } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
-import { FaRegUser } from "react-icons/fa";
-import { IoMdLogIn } from "react-icons/io";
 import MobileViewNav from "./MobileViewNav";
 import LargeScreens from "./LargeScreens";
+import Logout from "../features/authentication/Logout";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function handleMenuToggle() {
     setIsOpen((prevOpen) => !prevOpen);
@@ -23,15 +21,7 @@ function Navigation() {
         </Link>
         <LargeScreens />
         <div className="flex items-center space-x-2">
-          {isLoggedIn ? (
-            <Link to="/register">
-              <FaRegUser className="text-lg cursor-pointer text-stone-300" />
-            </Link>
-          ) : (
-            <Link to="/login">
-              <IoMdLogIn className="text-2xl cursor-pointer text-stone-300" />
-            </Link>
-          )}
+          <Logout />
 
           <Link to="/cart" className="flex">
             <BsCart4 className="text-2xl cursor-pointer text-stone-300" />
