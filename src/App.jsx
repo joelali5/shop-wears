@@ -18,6 +18,7 @@ import Cart from "./features/cart/Cart";
 import SignUp from "./features/authentication/SignUp";
 import Login from "./features/authentication/Login";
 import Checkout from "./features/checkout/Checkout";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 function App() {
   const router = createBrowserRouter([
@@ -72,7 +73,11 @@ function App() {
         },
         {
           path: "/checkout",
-          element: <Checkout />,
+          element: (
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          ),
         },
       ],
     },
