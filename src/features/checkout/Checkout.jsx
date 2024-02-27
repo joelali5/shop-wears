@@ -1,4 +1,6 @@
 import BackBtn from "../../ui/BackBtn";
+import useUser from "../../hooks/useUser";
+import CheckoutSpinner from "../../ui/SpinnerMini";
 
 const fakeCart = [
   {
@@ -34,21 +36,28 @@ const fakeCart = [
 ];
 
 function Checkout() {
+  const { metaData } = useUser();
+  const { address, fullname, phone } = metaData;
   return (
     <>
       <BackBtn route={-1} />
       <div className="sm:w-3/5 sm:mx-auto mx-2 my-2 sm:my-0">
         <div className="flex flex-col mb-4">
-          <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
-            joel aliyu
-          </p>
-
-          <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
-            27 Okparavero close, off uwasota. Benin city
-          </p>
-          <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
-            0764632342445
-          </p>
+          {address === "" && fullname === "" && phone === "" ? (
+            <CheckoutSpinner />
+          ) : (
+            <>
+              <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
+                {fullname}
+              </p>
+              <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
+                {address}
+              </p>
+              <p className="w-full sm:w-3/5 rounded-md text-stone-500 capitalize font-mono text-sm sm:text-lg">
+                {phone}
+              </p>
+            </>
+          )}
         </div>
         <ul className="list-none flex">
           {fakeCart.map((item) => (
