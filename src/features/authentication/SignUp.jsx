@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { supabase } from "../../helper/supabaseClient";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -108,6 +108,12 @@ function SignUp() {
         <button className="bg-primary rounded-lg px-1 py-2 mb-2 text-stone-200 font-bold font-mono">
           sign up
         </button>
+        <p className="font-roboto text-sm">
+          Already registered?{" "}
+          <Link to="/login" className="text-blue-500 font-bold">
+            Login
+          </Link>
+        </p>
       </form>
     </div>
   );

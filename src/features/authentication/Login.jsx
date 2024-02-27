@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/apiAuth";
 import SpinnerMini from "../../ui/SpinnerMini";
 import { useState } from "react";
@@ -70,6 +70,12 @@ function Login() {
         >
           {isLoading ? <SpinnerMini /> : "Login"}
         </button>
+        <p className="font-roboto text-sm">
+          Don't have an account?{" "}
+          <Link to="/signup" className="text-blue-500 font-bold">
+            Signup
+          </Link>
+        </p>
       </form>
     </div>
   );
