@@ -6,9 +6,11 @@ import { useState } from "react";
 import MobileViewNav from "./MobileViewNav";
 import LargeScreens from "./LargeScreens";
 import Logout from "../features/authentication/Logout";
+import { useSelector } from "react-redux";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const numCartItems = useSelector((state) => state.cart.cart.length);
 
   function handleMenuToggle() {
     setIsOpen((prevOpen) => !prevOpen);
@@ -25,7 +27,9 @@ function Navigation() {
 
           <Link to="/cart" className="flex">
             <BsCart4 className="text-2xl cursor-pointer text-stone-300" />
-            <sub className="text-red-500 font-700 font-roboto">0</sub>
+            <sub className="text-red-500 font-700 font-roboto">
+              {numCartItems}
+            </sub>
           </Link>
           <h3>CAD</h3>
         </div>
