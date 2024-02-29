@@ -6,7 +6,7 @@ function DeleteItem({ id }) {
 
   return (
     <button
-      className="border-1 px-3 py-3 font-bold hover:outline hover:outline-1 hover:outline-primary hover:bg-transparent bg-primary transition hover:ease-in-out duration-300 text-stone-200 hover:text-primary uppercase text-xs rounded-sm"
+      className="w-full sm:w-fit border-1 px-5 py-3 font-bold hover:outline hover:outline-1 hover:outline-primary hover:bg-transparent bg-primary transition hover:ease-in-out duration-300 text-stone-200 hover:text-primary uppercase text-xs rounded-sm"
       onClick={() => dispatch(deleteItem(id))}
     >
       Delete

@@ -12,7 +12,7 @@ function CartOverview() {
           <span>{totalCartQuantity}</span>
           <span>Items</span>
         </div>
-        <p className="text-[17px]">£{totalCartPrice}</p>
+        <p className="text-[17px]">£{totalCartPrice.toFixed(2)}</p>
       </div>
       <Link to="/cart" className="text-[17px] font-roboto">
         Open Cart &rarr;
