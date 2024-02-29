@@ -1,13 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import { getProduct } from "../../services/apiProducts";
 import BackBtn from "../../ui/BackBtn";
-import { useDispatch } from "react-redux";
-import { addItem } from "../cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, getCurrentQuantityById } from "../cart/cartSlice";
+import DeleteItem from "../cart/DeleteItem";
 
 function Item() {
   const item = useLoaderData();
   const { id, image, category, title, price, description } = item;
   const dispatch = useDispatch();
+  const currentQuantity = useSelector(getCurrentQuantityById(id));
+
+  const isInCart = currentQuantity > 0;
 
   function handleAddToCart() {
     const newItem = {
@@ -38,13 +42,18 @@ function Item() {
           </p>
           <div className="flex justify-between items-center mt-4 sm:w-5/6">
             <p className="font-bold text-lg sm:text-2xl">£{price}</p>
-            <button
-              to="/cart"
-              className="border-1 px-3 py-3 font-bold outline outline-1 outline-primary hover:bg-primary transition hover:ease-in-out duration-300 hover:text-white uppercase text-xs rounded-sm"
-              onClick={handleAddToCart}
-            >
-              Add to cart
-            </button>
+            <div className="space-x-2">
+              {isInCart && <DeleteItem id={id} />}
+              {!isInCart && (
+                <button
+                  to="/cart"
+                  className="border-1 px-3 py-3 font-bold outline outline-1 outline-primary hover:bg-primary transition hover:ease-in-out duration-300 hover:text-white uppercase text-xs rounded-sm"
+                  onClick={handleAddToCart}
+                >
+                  Add to cart
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

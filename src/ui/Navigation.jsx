@@ -7,10 +7,11 @@ import MobileViewNav from "./MobileViewNav";
 import LargeScreens from "./LargeScreens";
 import Logout from "../features/authentication/Logout";
 import { useSelector } from "react-redux";
+import { getCart } from "../features/cart/cartSlice";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const numCartItems = useSelector((state) => state.cart.cart.length);
+  const numCartItems = useSelector(getCart).length;
 
   function handleMenuToggle() {
     setIsOpen((prevOpen) => !prevOpen);
