@@ -5,6 +5,7 @@ import BackBtn from "../../ui/BackBtn";
 
 function Products() {
   const { products } = useLoaderData();
+  console.log(products);
   return (
     <>
       <BackBtn route={-1} />

@@ -45,7 +45,7 @@ function SignUp() {
           Email:
         </label>
         <input
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
+          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-serif"
           type="email"
           id="email"
           {...register("email", { required: "email cannot be empty" })}
@@ -59,7 +59,7 @@ function SignUp() {
         </label>
         <input
           type="password"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
+          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-serif"
           id="password"
           {...register("password", { required: "password cannot be empty" })}
         />
@@ -72,7 +72,7 @@ function SignUp() {
         <input
           type="text"
           id="fullname"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
+          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-serif"
           {...register("fullname", { required: "Full name cannot be empty" })}
         />
         <p className="text-xs sm:text-sm text-red-500 mb-3">
@@ -85,7 +85,7 @@ function SignUp() {
         <input
           type="text"
           id="address"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
+          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-serif"
           {...register("address", { required: "address cannot be empty" })}
         />
         <p className="text-xs sm:text-sm text-red-500 mb-3">
@@ -98,7 +98,7 @@ function SignUp() {
         <input
           type="text"
           id="phone"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
+          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-serif"
           {...register("phone", { required: "Phone cannot be empty" })}
         />
         <p className="text-xs sm:text-sm text-red-500 mb-3">
@@ -110,7 +110,7 @@ function SignUp() {
         </button>
         <p className="font-roboto text-sm">
           Already registered?{" "}
-          <Link to="/login" className="text-blue-500 font-bold">
+          <Link to="/login" className="text-blue-500 font-bold font-serif">
             Login
           </Link>
         </p>

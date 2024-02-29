@@ -1,4 +1,5 @@
 import { useRouteError } from "react-router-dom";
+import BackBtn from "./BackBtn";
 
 function Error() {
   const error = useRouteError();
@@ -15,6 +16,7 @@ function Error() {
         <p className="text-2xl md:text-3xl">
           <i>{error.data || error.message}</i>
         </p>
+        <BackBtn route={-1} />
       </div>
     </div>
   );

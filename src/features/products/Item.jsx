@@ -30,14 +30,14 @@ function Item() {
   return (
     <>
       <BackBtn route={-1} />
-      <div className="border-2 flex flex-col border-slate-200 mb-3 px-2 py-2 sm:mt-8 mx-5 sm:w-3/5 sm:flex-row sm:space-x-10 sm:items-center sm:mx-auto sm:px-5">
-        <div className="w-full sm:w-3/5 h-1/2 mb-4">
-          <img src={image} alt="item img w-full" />
+      <div className="bg-white shadow-xl rounded-lg flex flex-col mb-3 px-2 py-2 sm:mt-8 mx-5 sm:w-3/5 sm:flex-row sm:space-x-10 sm:items-center sm:mx-auto sm:px-5 sm:pb-6">
+        <div className="w-full sm:w-2/5 mb-4">
+          <img src={image} alt="item img" className="w-full" />
         </div>
         <div className="h-1/2 flex flex-col justify-end gap-3">
           <p className="text-sm uppercase text-stone-400">{category}</p>
           <p className="font-roboto text-sm font-bold">{title}</p>
-          <p className="font-roboto text-xs sm:text-sm text-stone-600 sm:w-5/6">
+          <p className="font-serif text-xs sm:text-sm text-stone-600 sm:w-5/6">
             {description}
           </p>
           <div className="flex flex-col sm:flex-row sm:justify-between items-center mt-2 sm:w-5/6">

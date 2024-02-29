@@ -5,7 +5,6 @@ import BackBtn from "../../ui/BackBtn";
 
 function Womens() {
   const womenClothing = useLoaderData();
-  console.log(womenClothing);
 
   return (
     <>

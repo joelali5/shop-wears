@@ -4,7 +4,6 @@ import Error from "./ui/Error";
 import Products, {
   loader as productsLoader,
 } from "./features/products/Products";
-import Home from "./ui/Home";
 import Item, { loader as itemLoader } from "./features/products/Item";
 import Mens, { loader as mensLoader } from "./features/products/Mens";
 import Women from "./features/products/Women";
@@ -28,10 +27,6 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/products",
           element: <Products />,
           loader: productsLoader,
         },

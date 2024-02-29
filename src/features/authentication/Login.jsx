@@ -40,7 +40,7 @@ function Login() {
           Email:
         </label>
         <input
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
+          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-serif"
           type="email"
           id="email"
           {...register("email", { required: "Email field cannot be empty" })}
@@ -54,7 +54,7 @@ function Login() {
         </label>
         <input
           type="password"
-          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-mono"
+          className="border-[1px] border-stone-200 rounded-lg px-1 py-1 focus:outline-0 font-serif"
           id="password"
           {...register("password", {
             required: "The password field cannot be empty",
@@ -65,14 +65,14 @@ function Login() {
         </p>
 
         <button
-          className="bg-primary rounded-lg px-1 py-2 mb-2 text-stone-200 font-bold font-mono"
+          className="bg-primary rounded-lg px-1 py-2 mb-2 text-stone-200 font-bold font-serif"
           disabled={isLoading}
         >
           {isLoading ? <SpinnerMini /> : "Login"}
         </button>
         <p className="font-roboto text-sm">
           Don't have an account?{" "}
-          <Link to="/signup" className="text-blue-500 font-bold">
+          <Link to="/signup" className="text-blue-500 font-bold font-serif">
             Signup
           </Link>
         </p>
